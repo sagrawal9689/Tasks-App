@@ -14,8 +14,6 @@ const Header = () => {
                 <Button variant="light" className="mx-4">    
                     Add Task
                 </Button>
-                <Navbar.Toggle aria-controls='basic-navbar-nav' />
-                <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='ms-auto'>
                     <LinkContainer to='/login'>
                       <Nav.Link>
@@ -23,7 +21,6 @@ const Header = () => {
                       </Nav.Link>
                     </LinkContainer>
                   </Nav>
-                </Navbar.Collapse>
                 </div>
               </Container>
             </Navbar>
