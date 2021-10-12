@@ -25,7 +25,36 @@ const createTask = catchAsync(async (req, res,next) => {
     res.status(201).json(createdTask)
 })
 
+const updateTask = catchAsync(async (req, res,next) => {
+  
+    const {
+      description,
+      id
+    } = req.body
+
+    const task = await Task.findOne({ _id: id })
+    
+    task.description= description;
+    await task.save()
+
+    res.status(200).json(task)
+})
+
+const deleteTask = catchAsync(async (req, res,next) => {
+  
+    const {
+      taskId
+    } = req.query
+
+    const task = await Task.deleteOne({ _id: taskId })
+
+
+    res.status(200).json("deleted")
+})
+
 export{
     getTasks,
-    createTask
+    createTask,
+    updateTask,
+    deleteTask
 }
