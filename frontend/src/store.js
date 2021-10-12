@@ -2,12 +2,15 @@ import { createStore, combineReducers , applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { userLoginReducer, userRegisterReducer } from './reducers/userReducers'
-import { taskListReduer } from './reducers/taskReducers'
+import { taskCreateReducer, taskDeleteReducer, taskListReduer, taskUpdateReducer } from './reducers/taskReducers'
 
 const reducer= combineReducers({
     userLogin: userLoginReducer ,
     userRegister: userRegisterReducer,
-    taskList: taskListReduer 
+    taskList: taskListReduer,
+    taskCreate: taskCreateReducer,
+    taskUpdate: taskUpdateReducer, 
+    taskDelete: taskDeleteReducer
 })
 
 const userInfoFromStorage= localStorage.getItem('userInfo')? (JSON.parse(localStorage.getItem('userInfo'))): null

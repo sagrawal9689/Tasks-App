@@ -6,7 +6,7 @@ import Message from '../components/Message'
 import { login } from '../actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
 
-const LoginScreen = ({ location, history }) => {
+const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
