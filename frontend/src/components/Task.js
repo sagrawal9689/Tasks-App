@@ -1,16 +1,19 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Row, Col, Container } from 'react-bootstrap'
 
 const Task = ({ task }) => {
     return (
-        <div className="task-container">
-            <span>{task.description}</span>
-
-            <div>
-            <Button className="mx-3">Edit</Button>
-            <Button className="mx-3">Delete</Button>
-            </div>
-        </div>
+        <Container>
+            <Row>
+                <Col md={9} xs={12}>
+                <span>{task.description}</span>
+                </Col>
+                <Col md={3} xs={12}>
+                <Button className="mx-1">Edit</Button>
+                <Button className="mx-1">Delete</Button>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
