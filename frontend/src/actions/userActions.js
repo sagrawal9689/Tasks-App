@@ -34,6 +34,17 @@ export const logout=()=> async(dispatch)=>{
     dispatch({
         type: 'USER_LOGOUT'
     })
+    dispatch({
+      type: 'RESET_LIST'
+  })
+  
+  dispatch({
+    type: 'TASK_CREATE_RESET'
+})
+
+  dispatch({
+    type: 'TASK_UPDATE_RESET'
+  })
 }
 
 export const register = (name, email, password) => async (dispatch) => {
